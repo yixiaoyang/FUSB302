@@ -247,7 +247,7 @@ int FUSB302::init(void)
     /* all other variables assumed to default to 0 */
 
     /* Restore default settings */
-    this->tcpc_write(TCPC_REG_RESET, TCPC_REG_RESET_SW_RESET);
+    this->tcpc_write(TCPC_REG_RESET, TCPC_REG_RESET_SW_RESET | TCPC_REG_RESET_PD_RESET);
 
     /* Turn on retries and set number of retries */
     this->tcpc_read(TCPC_REG_CONTROL3, &reg);
